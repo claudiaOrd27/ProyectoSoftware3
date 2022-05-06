@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="../WEB-INF/template.xhtml">
+    <ui:define name="title">Registros unishop</ui:define>
+    <ui:define name="content">
+
+
+        <h:body>
+
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+                        <h:form>
+
+                            <p:commandButton id="prueba1" value="Mostrar Grafico de Ventas"
+                                             actionListener="#{administadorBean.listar}" icon="pi pi-sign-in"
+                                             iconPos="left" styleClass="ui-button-raised" update="panel"/>
+
+
+                            <h:panelGroup id="panel" layout="block">
+
+                                <p:chart type="pie" model="#{administadorBean.pieChartModel}"
+                                         style="width: 400px;height: 300px"
+                                         rendered="#{administadorBean.pieChartModel!=null}"/>
+
+
+                            </h:panelGroup>
+
+
+                        </h:form>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+
+
+                        <h:form>
+
+                            <p:commandButton id="prueba3" value="Mostrar Grafico stocks"
+                                             actionListener="#{administadorBean.listar3}" icon="pi pi-sign-in"
+                                             iconPos="left" styleClass="ui-button-raised" update="panel3"/>
+
+
+                            <h:panelGroup id="panel3" layout="block">
+
+                                <p:chart type="pie" model="#{administadorBean.pieChartModel}"
+                                         style="width: 400px;height: 300px"
+                                         rendered="#{administadorBean.pieChartModel!=null}"/>
+
+
+                            </h:panelGroup>
+
+
+                        </h:form>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+                        <h:form>
+                            <p:commandButton id="prueba2" value="Mostrar Grafico de Precios"
+                                             actionListener="#{administadorBean.listar2}" icon="pi pi-sign-in"
+                                             iconPos="left" styleClass="mt-4" update="panel2"/>
+
+                            <h:panelGroup id="panel2" layout="block">
+
+                                <p:chart type="pie" model="#{administadorBean.pieChartModel}"
+                                         style="width: 400px;height: 300px"
+                                         rendered="#{administadorBean.pieChartModel!=null}"/>
+
+
+                            </h:panelGroup>
+
+
+                        </h:form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+                        <h:form>
+                            <p:commandButton id="prueba4" value="Mostrar Grafico Descuentos"
+                                             actionListener="#{administadorBean.listar4}" icon="pi pi-sign-in"
+                                             iconPos="left" styleClass="mt-4" update="panel4"/>
+
+                            <h:panelGroup id="panel4" layout="block">
+
+                                <p:chart type="pie" model="#{administadorBean.pieChartModel}"
+                                         style="width: 400px;height: 300px"
+                                         rendered="#{administadorBean.pieChartModel!=null}"/>
+
+
+                            </h:panelGroup>
+
+
+                        </h:form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+                        <h:form>
+                            <p:commandButton id="prueba5" value="Mostrar Ciudades con Ventas"
+                                             actionListener="#{administadorBean.listar5}" icon="pi pi-sign-in"
+                                             iconPos="left" styleClass="mt-4" update="panel5"/>
+
+                            <h:panelGroup id="panel5" layout="block">
+
+                                <p:chart type="pie" model="#{administadorBean.pieChartModel}"
+                                         style="width: 400px;height: 300px"
+                                         rendered="#{administadorBean.pieChartModel!=null}"/>
+
+
+                            </h:panelGroup>
+
+
+                        </h:form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </h:body>
+
+
+    </ui:define>
+</ui:composition>
+</html>

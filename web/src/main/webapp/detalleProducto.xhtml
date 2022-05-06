@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="WEB-INF/template.xhtml">
+    <ui:define name="title">#{detalleProductoBean.producto.nombre}</ui:define>
+    <ui:define name="content">
+
+        <div id="fb-root"></div>
+        <script async="true" defer="true" crossorigin="anonymous"
+                src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&amp;version=v9.8&amp;appId=406506983855391&amp;autoLogAppEvents=1"
+                nonce="ylDHl59T"></script>
+
+        <div id="fb-root"></div>
+        <script async="true" defer="true" crossorigin="anonymous"
+                src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&amp;version=v12.0&amp;appId=406506983855391&amp;autoLogAppEvents=1"
+                nonce="eyMIsPTN"></script>
+
+        <div class="row">
+            <div class="col-lg-7 col-md-1">
+                <div class="box box-stretched">
+
+
+                    <p:galleria rendered="#{detalleProductoBean.producto.imagenes.size() > 0}"
+                                value="#{detalleProductoBean.producto.imagenes}" var="imagen">
+                        <p:graphicImage url="/uploads/#{imagen}" alt="image Description for #{imagen}"/>
+                    </p:galleria>
+
+                    <p:graphicImage rendered="#{detalleProductoBean.producto.imagenes.size()==0}"
+                                    url="/uploads/#{detalleProductoBean.producto.imagenPrincipal}"/>
+
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-md-1">
+                <div class="p-grid">
+                    <div class="box">
+                        <p:rating value="#{detalleProductoBean.calificacionPromedio}" readonly="true"/>
+                        <h1 class="mt-4">#{detalleProductoBean.producto.nombre}</h1>
+                        <h1 class="mt-4">#{detalleProductoBean.producto.precio}</h1>
+
+
+                        <h:form class="mt-4" rendered="#{seguridadBean.autenticado}">
+
+                            <p:commandButton value="Añadir al carrito" icon="pi pi-shopping-cart" update="@form"
+                                             action="#{seguridadBean.agragarCarrito(detalleProductoBean.producto.codProducto,detalleProductoBean.producto.precio,detalleProductoBean.producto.nombre,detalleProductoBean.producto.imagenPrincipal)}"/>
+                            <p:growl for="add-cart" showDetail="true"/>
+
+
+                        </h:form>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="p-grid">
+                        <div class="box">
+
+
+                            <script>
+                                window.twttr = (function (d, s, id) {
+                                    var js, fjs = d.getElementsByClassName(s)[0], t = window.twttr
+                                        || {};
+                                    if (d.getElementsById(id))
+                                        return t;
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = "https://platform.twitter.com/widgets.js";
+                                    fjs.parentNodo.insertBefore(js, fjs);
+
+                                    t._e = [];
+                                    t.ready = function (f) {
+                                        t._e.push(f);
+                                    };
+                                    return t;
+                                }(document, "script", "twitter-wjs"));
+                            </script>
+
+                            <div class="btn-redes">
+                                <div class="fb-share-button"
+                                     data-href="https://www.uniquindio.edu.co/"
+                                     data-layout="button_count" data-size="large"></div>
+
+                                <a class="twitter-shate-button"
+                                   href="https://twitter.com/intent/tweet?text=hello%20world"
+                                   data-size="large"
+                                   data-url="http://localhost:8080/detalleProducto.xhtml?product=#{detalleProductoBean.producto.codProducto}">
+                                    Tweet
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="box">
+
+
+                    <p>Ciudad: #{detalleProductoBean.producto.ciudadProducto.nombre}</p>
+
+
+                </div>
+
+
+                <p:dataList emptyMessage="No hay categorias para mostrar" styleClass="lista-carac"
+                            value="#{detalleProductoBean.producto.getCategoria(detalleProductoBean.producto.listaCategoria)}">
+
+                </p:dataList>
+
+            </div>
+
+        </div>
+
+
+        <p:panel header="Descripcion" styleClass="mt-3">
+
+            <h:outputText value="#{detalleProductoBean.producto.descripcion}" escape="false"/>
+
+        </p:panel>
+
+        <p:panel header="Hacer un comentario" styleClass="mt-3" rendered="#{seguridadBean.autenticado}">
+            <h:form id="crear-comentario">
+                <h:panelGrid columns="2" cellpadding="3">
+                    <p:inputTextarea value="#{detalleProductoBean.nuevoComentario.mensaje}" required="true"
+                                     styleClass="comentario-usuario"/>
+                    <p:rating value="#{detalleProductoBean.nuevoComentario.calificacion}" required="true"/>
+                </h:panelGrid>
+                <p:commandButton value="Comentar" icon="pi pi-comment" iconPos="left" update="@form,lista-c"
+                                 styleClass="mt-4" action="#{detalleProductoBean.crearComentario}"/>
+                <p:growl for="msj-pregunta" showDetail="true"/>
+            </h:form>
+        </p:panel>
+
+
+        <p:panel header="Comentarios" styleClass="mt-3">
+            <div class="blog-comment">
+                <ul class="comments">
+                    <p:dataList id="lista-c" value="#{detalleProductoBean.listaComentarios}" var="comentario"
+                                emptyMessage="No hay comentarios" type="definition">
+                        <li class="clearfix">
+                            <img src="/uploads/avatar.jpg" class="avatar" alt=""/>
+                            <div class="post-comments">
+                                <p class="meta">#{comentario.fechaComentario} <a
+                                        href="#">#{comentario.usuarioComentario.nombre}</a> dijo: <i class="pull-right"
+                                                                                                     style="visibility: hidden"><a
+                                        href="#"><small>Reply</small></a></i></p>
+                                <p>#{comentario.mensaje}</p>
+                                <p:rating readonly="true" value="#{comentario.calificacion}"/>
+                            </div>
+
+
+                        </li>
+                    </p:dataList>
+                </ul>
+            </div>
+        </p:panel>
+
+    </ui:define>
+</ui:composition>
+</html>
