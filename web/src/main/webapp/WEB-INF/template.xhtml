@@ -34,25 +34,43 @@
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                            <a href="/" class="nav-link text-white">
+                                <i class="pi pi-home bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Home
+                            </a>
                         </li>
-                        <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
-                            <a class="nav-link" href="/usuario/crearProducto.xhtml">Registrar Producto</a>
-                        </li>
-
-                        <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
-                            <a class="nav-link" href="/usuario/carritoCompra.xhtml">Carrito</a>
-                        </li>
-
-                        <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
-                            <a class="nav-link" href="/usuario/perfilUsuario.xhtml">Mi Perfil</a>
+                        <li jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
+                            <a href="/usuario/crearProducto.xhtml" class="nav-link text-white" >
+                                <i class="pi pi-save bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Publicar producto
+                            </a>
                         </li>
 
-                        <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
-                            <a class="nav-link" href="/usuario/comprasUsuario.xhtml">Mis Compras</a>
+                        <li jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
+                            <a href="/usuario/carritoCompra.xhtml" class="nav-link text-white" >
+                                <i class="pi pi-shopping-cart bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Carrito
+                            </a>
                         </li>
-                        <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
-                            <a class="nav-link" href="/usuario/productosUsuario.xhtml">Mis productos</a>
+
+                        <li jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
+                            <a href="/usuario/perfilUsuario.xhtml" class="nav-link text-white" >
+                                <i class="pi pi-user bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Perfil
+                            </a>
+                        </li>
+
+                        <li jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
+                            <a href="/usuario/comprasUsuario.xhtml" class="nav-link text-white" >
+                                <i class="pi pi-dollar bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Mis Compras
+                            </a>
+                        </li>
+                        <li jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'usuario'}">
+                            <a href="/usuario/productosUsuario.xhtml" class="nav-link text-white" >
+                                <i class="pi pi-list bi d-block mx-auto mb-1" style="font-size: 1.5rem"></i>
+                                Mis productos
+                            </a>
                         </li>
 
                         <li class="nav-item" jsf:rendered="#{seguridadBean.autenticado and seguridadBean.rol == 'administrador'}">
