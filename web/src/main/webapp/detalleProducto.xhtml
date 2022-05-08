@@ -42,16 +42,18 @@
             <div class="col-lg-5 col-md-1">
                 <div class="p-grid">
                     <div class="box">
-                        <p:rating value="#{detalleProductoBean.calificacionPromedio}" readonly="true"/>
+                        <p:rating value="#{detalleProductoBean.calificacionPromedio}" readonly="true" />
                         <h1 class="mt-4">#{detalleProductoBean.producto.nombre}</h1>
                         <h1 class="mt-4">#{detalleProductoBean.producto.precio}</h1>
-
 
                         <h:form class="mt-4" rendered="#{seguridadBean.autenticado}">
 
                             <p:commandButton value="Añadir al carrito" icon="pi pi-shopping-cart" update="@form"
+                                             styleClass="rounded-button ui-button-success"
                                              action="#{seguridadBean.agragarCarrito(detalleProductoBean.producto.codProducto,detalleProductoBean.producto.precio,detalleProductoBean.producto.nombre,detalleProductoBean.producto.imagenPrincipal)}"/>
                             <p:growl for="add-cart" showDetail="true"/>
+
+
 
 
                         </h:form>

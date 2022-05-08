@@ -10,7 +10,7 @@
 <ui:composition template="WEB-INF/template.xhtml">
     <ui:define name="title">Inicio</ui:define>
     <ui:define name="content">
-        <h1>Lista Productos</h1>
+        <h1 style="color:#13653f;font-family: 'CROSS EVERYTHING'">Lista de Productos</h1>
         <h:form>
 
 
@@ -29,7 +29,7 @@
                             <h5 class="card-title">#{producto.nombre}</h5>
                             <p class="card-text">$#{producto.precio}</p>
                             <hr/>
-                            <p:commandButton value="Ver detalle" styleClass="ui-button-raised"
+                            <p:commandButton type="button" value="Ver detalle" styleClass="uui-button-raised ui-button-warning"
                                              icon="pi pi-arrow-right" iconPos="right"
                                              action="#{inicioBean.irDetalle(producto.codProducto)}"/>
 
