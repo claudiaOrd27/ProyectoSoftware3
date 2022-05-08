@@ -29,10 +29,7 @@ public class AdministradorTest {
     public void registrarAdministradorTestSql(){
 
         //crea un administrador
-        Map<String,String>telefonos=new HashMap<>();
-        telefonos.put("casa","321414");
-        telefonos.put("celular","321452514");
-        Administrador administrador1 = new Administrador("123", "Ana", "ana@gmail.com", "2323", telefonos);
+        Administrador administrador1 = new Administrador("123", "Ana", "ana@gmail.com", "2323", "3109876252");
 
         Administrador administradorGuardado=miAdministradorRepo.save(administrador1);
         Assertions.assertNotNull(administradorGuardado);

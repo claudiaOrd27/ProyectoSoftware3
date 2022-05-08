@@ -37,11 +37,7 @@ public class ProductoServicioTest {
         try {
 
             LocalDate fecha =  LocalDate.of(2029,10,12);
-            Map<String,String> telefonos=new HashMap<>();
-            telefonos.put("casa","321414");
-            telefonos.put("celular","321452514");
-            Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1",telefonos,null);
-            u.setTelefono(telefonos);
+            Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1","321452514",null);
             usuarioServicio.registrarUsuario(u);
             List<String> imagenes = new ArrayList<>();
             imagenes.add("1");

@@ -42,7 +42,11 @@ public class Persona implements Serializable {
     //@JsonIgnore
     private String password; //contraseña de persona
 
-    @ElementCollection
-    private Map<String,String> telefono; //Telefonos que tiene la persona
+    @Column(length = 20,nullable = true)
+    @NotBlank(message = "el telefono no puede estar vacio")
+    private String telefono; //Nombre de la persona
+
+   // @ElementCollection
+   // private Map<String,String> telefono; //Telefonos que tiene la persona
 
 }

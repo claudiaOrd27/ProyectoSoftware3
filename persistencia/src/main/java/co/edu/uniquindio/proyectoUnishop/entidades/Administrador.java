@@ -25,7 +25,7 @@ public class Administrador extends Persona {
      * @param password contraseña del administrador
      * @param telefono telefonos del administrador
      */
-    public Administrador(String codPersona, String nombre, String email, String password, Map<String, String> telefono) {
+    public Administrador(String codPersona, String nombre, String email, String password, String telefono) {
         super(codPersona, nombre, email, password, telefono);
     }
 

@@ -27,11 +27,8 @@ public class UsuarioServicioTest {
     @Test
     public void ListarUsuariosTest(){
 
-        Map<String,String> telefonos=new HashMap<>();
-        telefonos.put("casa","321414");
-        telefonos.put("celular","321452514");
-        Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1",telefonos,null);
-        u.setTelefono(telefonos);
+        Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1","321452514",null);
+
         try {
 
             usuarioServicio.registrarUsuario(u);
@@ -52,11 +49,7 @@ public class UsuarioServicioTest {
     @Test
     public void RegistrarUsuarioTest(){
 
-        Map<String,String> telefonos=new HashMap<>();
-        telefonos.put("casa","321414");
-        telefonos.put("celular","321452514");
-        Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1",telefonos,null);
-        u.setTelefono(telefonos);
+        Usuario u= new Usuario("200", "Oscar", "oscar@gmail.com", "oscar1","321452514",null);
         try {
 
             Usuario respuesta = usuarioServicio.registrarUsuario(u);

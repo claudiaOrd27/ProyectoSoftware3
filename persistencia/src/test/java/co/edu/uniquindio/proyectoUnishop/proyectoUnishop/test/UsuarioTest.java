@@ -38,11 +38,7 @@ public class UsuarioTest {
         miCiudadRepo.save(ciudad1);
 
         //Se crea un usuario
-        Map<String,String>telefonos=new HashMap<>();
-        telefonos.put("casa","321414");
-        telefonos.put("celular","321452514");
-        Usuario usuario1=new Usuario("111","Luisa Perez","luisaPe@","12345",telefonos,ciudad1);
-        usuario1.setTelefono(telefonos);
+        Usuario usuario1=new Usuario("111","Luisa Perez","luisaPe@","12345","321452514",ciudad1);
         usuario1.setCiudadUsuario(ciudad1);
         Usuario usuarioGuardado=miUsuarioRepo.save(usuario1);
 

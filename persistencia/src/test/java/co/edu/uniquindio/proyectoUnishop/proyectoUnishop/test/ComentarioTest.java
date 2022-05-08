@@ -51,11 +51,7 @@ public class ComentarioTest {
         miCiudadRepo.save(miCiudad);
 
         //Vendedor producto
-        Map<String, String> telefonos = new HashMap<>();
-        telefonos.put("casa", "321414");
-        telefonos.put("celular", "321452514");
-        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", telefonos, miCiudad);
-        usuario1.setTelefono(telefonos);
+        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", "321452514", miCiudad);
         usuario1.setCiudadUsuario(miCiudad);
         Usuario usuario = miUsuarioRepo.save(usuario1);
         //Producto  Vender

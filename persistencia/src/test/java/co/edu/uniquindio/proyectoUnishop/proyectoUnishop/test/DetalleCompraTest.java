@@ -45,10 +45,7 @@ public class DetalleCompraTest {
         Ciudad ciudad=new Ciudad("armenia");
         miCiudadRepo.save(ciudad);
         //Crear un Usuario
-        Map<String,String>telefonos=new HashMap<>();
-        telefonos.put("casa","321414");
-        telefonos.put("celular","321452514");
-        Usuario usuario=new Usuario("123", "Aleja", "aleja@gmail.com", "3456", telefonos, ciudad);
+        Usuario usuario=new Usuario("123", "Aleja", "aleja@gmail.com", "3456", "321452514", ciudad);
         miUsuarioRepo.save(usuario);
 
         //Crear una Compra

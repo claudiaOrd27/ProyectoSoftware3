@@ -50,11 +50,9 @@ public class SubastaRepoTest {
         List<String> listaImagenes = new ArrayList<>();
         listaImagenes.add("loquesea");
 
-        Map<String, String> telefonos = new HashMap<>();
-        telefonos.put("casa", "321414");
-        telefonos.put("celular", "321452514");
-        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", telefonos, ciudad2);
-        usuario1.setTelefono(telefonos);
+
+        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", "3103459344", ciudad2);
+
         Usuario usuarioGuardado = miUsuario.save(usuario1);
 
         Producto producto1 = new Producto("computador", 2, "Muy rapido", 20000.00, LocalDate.of(2022, 12, 2), 19.0, listaImagenes, usuarioGuardado, ciudad1);

@@ -45,11 +45,7 @@ public class CompraTest {
         miCiudadRepo.save(ciudad1);
 
         // se inicializa un cliente
-        Map<String, String> telefonos = new HashMap<>();
-        telefonos.put("casa", "321414");
-        telefonos.put("celular", "321452514");
-
-        Usuario usuario = new Usuario("123", "Aleja", "aleja@gmail.com", "3456", telefonos, ciudad1);
+        Usuario usuario = new Usuario("123", "Aleja", "aleja@gmail.com", "3456", "329452514", ciudad1);
 
         //se guarda el usurio
         miUsuarioRepo.save(usuario);

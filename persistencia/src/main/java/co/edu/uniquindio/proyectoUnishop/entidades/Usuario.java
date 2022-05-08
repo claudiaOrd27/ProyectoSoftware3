@@ -64,7 +64,7 @@ public class Usuario extends Persona  {
      * @param telefono telefonos del usuario
      * @param ciudadUsuario ciudad del usuario
      */
-    public Usuario(String codPersona, String nombre, String email, String password, Map<String, String> telefono, Ciudad ciudadUsuario) {
+    public Usuario(String codPersona, String nombre, String email, String password, String telefono, Ciudad ciudadUsuario) {
         super(codPersona, nombre, email, password, telefono);
         this.ciudadUsuario = ciudadUsuario;
     }
