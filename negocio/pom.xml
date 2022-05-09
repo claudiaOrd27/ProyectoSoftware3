@@ -8,11 +8,21 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>negocio</artifactId>
     <name>Proyecto de lógica de negocio</name>
     <description>Proyecto que representa la lógica de negocio y el acceso a los
         datos</description>
+
+
+    <properties>
+
+            <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+            <maven.compiler.source>11</maven.compiler.source>
+            <maven.compiler.target>11</maven.compiler.target>
+
+
+
+    </properties>
 
     <dependencies>
         <dependency>
@@ -20,5 +30,9 @@
             <artifactId>persistencia</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+
+
+
     </dependencies>
 </project>

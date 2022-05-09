@@ -14,7 +14,7 @@
         <version>2.5.4</version>
         <relativePath/>
     </parent>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <groupId>co.edu.uniquindio</groupId>
     <artifactId>proyecto-unishop</artifactId>
     <name>Proyecto fina de programacion avanzada</name>
@@ -23,9 +23,7 @@
         avanzada
     </description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+
 
     <dependencies>
 
@@ -87,5 +85,45 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <executable>true</executable>
+            </configuration>
+        </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <configuration>
+                    <appName>proyecto-final-0</appName>
+                </configuration>
+                <version>3.0.3</version>
+            </plugin>
+
+        </plugins>
+
+
+    </build>
 
 </project>
