@@ -23,8 +23,8 @@ public class configMail {
 /**
  * este es el correo y la contraseña del correo para la r4estauracion
  */
-        mailSender.setUsername("alfredogodofredopruebam@gmail.com");
-        mailSender.setPassword("LaCosa12345");
+        mailSender.setUsername("lopezandi9754@gmail.com");
+        mailSender.setPassword("prueba123");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
