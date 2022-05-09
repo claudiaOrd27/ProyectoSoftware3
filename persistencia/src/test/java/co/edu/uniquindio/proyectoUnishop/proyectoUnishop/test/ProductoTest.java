@@ -44,7 +44,7 @@ public class ProductoTest {
         miCiudadRepo.save(miCiudad);
 
         //Vendedor producto
-        Usuario usuario1 = new Usuario("111", "Maria Perez", "mariaPe@", "12345", "321452514", miCiudad);
+        Usuario usuario1 = new Usuario("111", "Maria Perez", "mariaPe@gmail.com", "12345", "321452514", miCiudad);
         usuario1.setCiudadUsuario(miCiudad);
         Usuario usuario = miUsuarioRepo.save(usuario1);
 

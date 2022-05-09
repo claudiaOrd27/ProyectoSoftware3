@@ -49,7 +49,7 @@ public class SubastaUsuarioTest {
         listaImagenes.add("loquesea");
 
 
-        Usuario usuario1=new Usuario("111","Luisa Perez","luisaPe@","12345","321452514",ciudad2);
+        Usuario usuario1=new Usuario("111","Luisa Perez","luisaPe@gmail.com","12345","321452514",ciudad2);
         Usuario usuarioGuardado=miUsuario.save(usuario1);
 
         Producto producto1 = new Producto("computador",2,"Muy rapido",20000.00, LocalDate.of(2022,12,2),19.0,listaImagenes,usuarioGuardado,ciudad1);

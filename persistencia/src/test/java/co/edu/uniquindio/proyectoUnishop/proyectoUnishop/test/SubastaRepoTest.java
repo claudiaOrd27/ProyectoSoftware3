@@ -51,7 +51,7 @@ public class SubastaRepoTest {
         listaImagenes.add("loquesea");
 
 
-        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", "3103459344", ciudad2);
+        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@gmail.com", "12345", "3103459344", ciudad2);
 
         Usuario usuarioGuardado = miUsuario.save(usuario1);
 

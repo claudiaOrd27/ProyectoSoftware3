@@ -51,7 +51,7 @@ public class ComentarioTest {
         miCiudadRepo.save(miCiudad);
 
         //Vendedor producto
-        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@", "12345", "321452514", miCiudad);
+        Usuario usuario1 = new Usuario("111", "Luisa Perez", "luisaPe@gmail.com", "12345", "321452514", miCiudad);
         usuario1.setCiudadUsuario(miCiudad);
         Usuario usuario = miUsuarioRepo.save(usuario1);
         //Producto  Vender
